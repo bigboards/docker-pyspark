@@ -21,6 +21,8 @@ RUN \
 # Define commonly used JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
 
+RUN mkdir -p /tmp/jupyterhub/spark/local && chmod 777 /tmp/jupyterhub/spark/local
+
 WORKDIR /srv/jupyterhub/
 
 EXPOSE 8000
