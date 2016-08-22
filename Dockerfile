@@ -22,6 +22,9 @@ RUN \
 ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
 
 RUN mkdir -p /tmp/jupyterhub/spark/local && chmod 777 /tmp/jupyterhub/spark/local
+RUN apt-get update \
+    && apt-get install build-essential gfortran libatlas-base-dev python-pip python-dev pkg-config libpng-dev libjpeg8-dev libfreetype6-dev \
+    && pip install --upgrade pip numpy scipy pandas scikit-learn matplotlib
 
 WORKDIR /srv/jupyterhub/
 
